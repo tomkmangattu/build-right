@@ -4,6 +4,8 @@ import HomePage from "./pages/HomePage";
 import HousingPage from "./pages/HousingPage";
 import IndustrialPage from "./pages/IndustrialPage";
 import AboutPage from "./pages/AboutPage";
+import { COMPANY_NAME } from "./globals";
+
 
 // Main App Component
 export default function ConstructionWebsite() {
@@ -40,7 +42,7 @@ export default function ConstructionWebsite() {
           <div className="flex justify-between items-center">
             <div className="flex items-center">
               <Building2 className="h-8 w-8 mr-2" />
-              <h1 className="text-2xl font-bold">BuildRight Construction</h1>
+              <h1 className="text-2xl font-bold">{COMPANY_NAME}</h1>
             </div>
 
             {/* Mobile menu button */}
@@ -123,7 +125,7 @@ export default function ConstructionWebsite() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
               <h3 className="text-lg font-semibold mb-4">
-                BuildRight Construction
+                {COMPANY_NAME}
               </h3>
               <p>Building tomorrow's landmarks with today's innovation.</p>
             </div>
@@ -142,7 +144,7 @@ export default function ConstructionWebsite() {
             </div>
           </div>
           <div className="border-t border-gray-700 mt-6 pt-6 text-center">
-            <p>&copy; 2025 BuildRight Construction. All rights reserved.</p>
+            <p>&copy; 2025 {COMPANY_NAME}. All rights reserved.</p>
           </div>
         </div>
       </footer>

@@ -1,10 +1,13 @@
+import { COMPANY_NAME, COMPANY_NAME_SHORT } from "../globals";
+
+
 export default function AboutPage() {
   return (
     <div>
       {/* Page Header */}
       <div className="bg-blue-800 text-white py-12">
         <div className="container mx-auto px-4">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">About BuildRight Construction</h1>
+          <h1 className="text-3xl md:text-4xl font-bold mb-4">About {COMPANY_NAME}</h1>
           <p className="text-lg max-w-3xl">
             With over 30 years of experience, we've established ourselves as a leading construction 
             company dedicated to quality, innovation, and client satisfaction.
@@ -19,7 +22,7 @@ export default function AboutPage() {
             <div className="md:w-1/2">
               <h2 className="text-2xl font-bold mb-4">Our Story</h2>
               <p className="text-gray-600 mb-4">
-                Founded in 1995 by John BuildRight, our company began as a small residential 
+                Founded in 1995 by John , our company began as a small residential 
                 construction firm with a vision to build homes that families would cherish for generations.
               </p>
               <p className="text-gray-600 mb-4">
@@ -27,7 +30,7 @@ export default function AboutPage() {
                 bringing the same commitment to quality and customer satisfaction to every project.
               </p>
               <p className="text-gray-600">
-                Today, BuildRight Construction stands as a testament to our founder's vision, 
+                Today, {COMPANY_NAME} stands as a testament to our founder's vision, 
                 with hundreds of successful projects completed and a reputation for excellence 
                 in the construction industry.
               </p>
@@ -47,7 +50,7 @@ export default function AboutPage() {
           <div className="text-center mb-12">
             <h2 className="text-2xl font-bold mb-4">Our Mission & Values</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              At BuildRight Construction, we're guided by a set of core principles that drive 
+              At {COMPANY_NAME}, we're guided by a set of core principles that drive 
               every aspect of our business and every project we undertake.
             </p>
           </div>
@@ -142,7 +145,7 @@ export default function AboutPage() {
           <h2 className="text-3xl font-bold mb-6">Ready to Work with Us?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Contact our team today to discuss your next construction project and discover how 
-            BuildRight can bring your vision to life.
+            {COMPANY_NAME_SHORT} can bring your vision to life.
           </p>
           <button className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-8 rounded-md transition-colors">
             Get In Touch

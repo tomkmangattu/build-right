@@ -1,3 +1,4 @@
+import { YEAR_ESTABLISHED } from "../globals";
 
 export default function HomePage() {
     return (
@@ -5,19 +6,19 @@ export default function HomePage() {
         {/* Hero Section */}
         <div className="bg-blue-900 text-white py-20">
           <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Building Excellence Since 1995</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Building Excellence Since {YEAR_ESTABLISHED}</h1>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
               From residential projects to industrial complexes, we deliver quality construction 
               solutions that stand the test of time.
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
+            {/* <div className="flex flex-wrap justify-center gap-4">
               <button className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-6 rounded-md transition-colors">
                 Get a Free Quote
               </button>
               <button className="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 text-white font-bold py-3 px-6 rounded-md transition-colors">
                 Our Projects
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
 
