@@ -1,50 +1,25 @@
+import { useEffect, useState } from 'react';
+import { getProjectDetailsFromCSV, ProjectDetails } from "../utils/ProjectDetails";
+import ProjectCard from '../components/ProjectCard';
+
 // Industrial Construction Page Component
 export default function IndustrialPage() {
-  const industrialProjects = [
-    {
-      id: 1,
-      title: "Manufacturing Plant",
-      location: "Industrial Park",
-      year: "2024",
-    },
-    {
-      id: 2,
-      title: "Logistics Center",
-      location: "Harbor District",
-      year: "2023",
-    },
-    {
-      id: 3,
-      title: "Tech Campus",
-      location: "Innovation Valley",
-      year: "2023",
-    },
-    {
-      id: 4,
-      title: "Distribution Warehouse",
-      location: "Commerce Center",
-      year: "2022",
-    },
-    {
-      id: 5,
-      title: "Office Complex",
-      location: "Business District",
-      year: "2022",
-    },
-    {
-      id: 6,
-      title: "Research Facility",
-      location: "Science Park",
-      year: "2021",
-    },
-    { id: 7, title: "Data Center", location: "Tech Corridor", year: "2021" },
-    {
-      id: 8,
-      title: "Retail Development",
-      location: "Shopping District",
-      year: "2020",
-    },
-  ];
+  const [projects, setProjects] = useState<ProjectDetails[]>([]);
+
+  // Inside a component or function
+  const loadProjects = async () => {
+    try {
+      const industrialProjects = await getProjectDetailsFromCSV('Industrial');
+      console.log(industrialProjects);
+      setProjects(industrialProjects);
+    } catch (error) {
+      console.error('Failed to load project data:', error);
+    }
+  };
+
+  useEffect(() => {
+    loadProjects();
+  }, []);
 
   return (
     <div>
@@ -68,27 +43,7 @@ export default function IndustrialPage() {
           <h2 className="text-2xl font-bold mb-8">Our Industrial Projects</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {industrialProjects.map((project) => (
-              <div
-                key={project.id}
-                className="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
-              >
-                <div className="h-48 bg-gray-200">
-                  <img
-                    src={`/api/placeholder/400/320`}
-                    alt={project.title}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-4">
-                  <h3 className="font-semibold text-lg">{project.title}</h3>
-                  <p className="text-gray-600">{project.location}</p>
-                  <p className="text-gray-500 text-sm">
-                    Completed: {project.year}
-                  </p>
-                </div>
-              </div>
-            ))}
+            {projects.map((project) => ProjectCard({ project }))}
           </div>
         </div>
       </div>

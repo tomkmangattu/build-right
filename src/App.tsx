@@ -4,7 +4,7 @@ import HomePage from "./pages/HomePage";
 import HousingPage from "./pages/HousingPage";
 import IndustrialPage from "./pages/IndustrialPage";
 import AboutPage from "./pages/AboutPage";
-import { COMPANY_NAME } from "./globals";
+import { COMPANY_NAME, YEAR_ESTABLISHED } from "./globals";
 
 
 // Main App Component
@@ -144,7 +144,7 @@ export default function ConstructionWebsite() {
             </div>
           </div>
           <div className="border-t border-gray-700 mt-6 pt-6 text-center">
-            <p>&copy; 2025 {COMPANY_NAME}. All rights reserved.</p>
+            <p>&copy; {YEAR_ESTABLISHED} {COMPANY_NAME}. All rights reserved.</p>
           </div>
         </div>
       </footer>
